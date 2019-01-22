@@ -13,24 +13,18 @@
 
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
-							<li><a href="index.php">Most</a></li>
-							<li><a href="index.php">Recent</a></li>
-							<li class="cat-1"><a href="index.php">Images</a></li>
-							<li class="cat-2"><a href="index.php">Videos</a></li>
-							<li class="cat-3"><a href="index.php">Messages</a></li>
-							<li class="cat-4"><a href="index.php">Sports</a></li>
+						<?php
+						if($categories!=null && sizeof($categories)>0)
+							foreach ($categories as $cat){
+						?>
+								<li><a href="index.php?cat_id=<?=$cat["id"]?>"><?=$cat["name"]?></a></li>
+						<?php }
+						?>
+							
 						</ul>
 						<!-- /nav -->
 
-						<!-- search -->
-						<div class="nav-btns">
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<div class="search-form">
-								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
-								<button class="search-close"><i class="fa fa-times"></i></button>
-							</div>
-						</div>
-						<!-- /search  -->
+						
 					</div>
 				</div>
 				<!-- /Main Nav -->
